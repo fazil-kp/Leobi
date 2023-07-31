@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mfl/pallete.dart';
+
+import 'home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,15 +9,19 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      title: 'Leobi',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(useMaterial3: true).copyWith(
+        scaffoldBackgroundColor: Pallete.whiteColor,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Pallete.whiteColor,
+        ),
       ),
-      home: ,
+      home: HomePage(),
     );
   }
 }
