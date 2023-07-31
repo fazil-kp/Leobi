@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mfl/features_boxs.dart';
+import 'package:mfl/features_boxs.dart';
 import 'package:mfl/pallete.dart';
 
 class HomePage extends StatefulWidget {
@@ -59,7 +61,7 @@ class _HomePageState extends State<HomePage> {
               border: Border.all(
                 color: Pallete.borderColor,
               ),
-              borderRadius:  BorderRadius.circular(20).copyWith(
+              borderRadius: BorderRadius.circular(20).copyWith(
                 topLeft: Radius.zero,
               ),
             ),
@@ -74,6 +76,45 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+          ),
+          Container(
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(
+              top: 10,
+              left: 22,
+            ),
+            alignment: Alignment.centerLeft,
+            child: const Text(
+              'Here are a few features',
+              style: TextStyle(
+                  fontFamily: 'Cera Pro',
+                  color: Pallete.mainFontColor,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          // List of Features is here
+          Column(
+            children: [
+              FeatureBox(
+                color: Pallete.firstSuggestionBoxColor,
+                headerText: 'ChatGpt',
+                descriptionText:
+                    'A smarter way to organized and informed with ChatGpt',
+              ),
+              FeatureBox(
+                color: Pallete.secondSuggestionBoxColor,
+                headerText: 'Dall-E',
+                descriptionText:
+                'Get inspired and stay creative with your person assistant powered by Dall-E',
+              ),
+              FeatureBox(
+                color: Pallete.thirdSuggestionBoxColor,
+                headerText: 'Smart Voice Assistant',
+                descriptionText:
+                'Get the best of both words with a voice assistant powered by Dall-E and ChatGpt',
+              ),
+            ],
           ),
         ],
       ),
